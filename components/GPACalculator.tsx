@@ -219,7 +219,7 @@ export default function GPACalculator() {
           className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-b from-white to-white/60"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
           Academic GPA Calculator
         </motion.h1>
@@ -227,7 +227,7 @@ export default function GPACalculator() {
           className="text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
         >
           Precisely calculate your semester GPA. Add your subjects, enter your
           grades, and get instant results.
@@ -238,9 +238,9 @@ export default function GPACalculator() {
         {/* Input Section */}
         <motion.div
           className="space-y-6"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.15, ease: "easeOut" }}
         >
           <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-6 md:p-8 relative overflow-hidden">
             <div className="flex justify-between items-center mb-6">
@@ -258,11 +258,15 @@ export default function GPACalculator() {
                 {subjects.map((subject, index) => (
                   <motion.div
                     key={subject.id}
-                    layout
-                    initial={{ opacity: 0, height: 0, marginBottom: 0 }}
-                    animate={{ opacity: 1, height: "auto", marginBottom: 12 }}
-                    exit={{ opacity: 0, height: 0, marginBottom: 0 }}
-                    transition={{ duration: 0.2 }}
+                    layout="position"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{
+                      opacity: 0,
+                      scale: 0.95,
+                      transition: { duration: 0.2 },
+                    }}
+                    transition={{ duration: 0.3 }}
                     className="group flex flex-col sm:flex-row gap-3 items-stretch sm:items-start bg-secondary/20 p-3 rounded-2xl hover:bg-secondary/40 transition-colors border border-white/5 hover:border-white/10"
                   >
                     <div className="flex-1 min-w-[140px] relative">
@@ -358,8 +362,7 @@ export default function GPACalculator() {
                 layout
                 onClick={addRow}
                 className="group mt-4 w-full py-4 flex items-center justify-center gap-2 text-accent-foreground font-medium bg-accent rounded-xl hover:brightness-110 transition-all shadow-lg shadow-accent/10"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Plus size={18} className="text-current" />
                 Add Another Subject
@@ -391,8 +394,8 @@ export default function GPACalculator() {
                 className="sticky top-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <div
                   ref={resultRef}
@@ -487,9 +490,9 @@ export default function GPACalculator() {
             ) : (
               <motion.div
                 className="sticky top-8 h-[400px] flex flex-col items-center justify-center bg-white/5 backdrop-blur-sm rounded-[2rem] border border-dashed border-white/10 text-muted-foreground p-8 text-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.5 }}
               >
                 <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mb-6 shadow-inner ring-1 ring-white/10">
