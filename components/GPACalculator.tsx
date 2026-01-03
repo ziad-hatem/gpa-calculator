@@ -263,7 +263,7 @@ export default function GPACalculator() {
                     animate={{ opacity: 1, height: "auto", marginBottom: 12 }}
                     exit={{ opacity: 0, height: 0, marginBottom: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="group flex flex-col sm:flex-row gap-3 items-stretch sm:items-start bg-zinc-900/40 p-3 rounded-2xl hover:bg-zinc-900/60 transition-colors border border-white/5 hover:border-white/10"
+                    className="group flex flex-col sm:flex-row gap-3 items-stretch sm:items-start bg-secondary/20 p-3 rounded-2xl hover:bg-secondary/40 transition-colors border border-white/5 hover:border-white/10"
                   >
                     <div className="flex-1 min-w-[140px] relative">
                       <select
@@ -276,7 +276,7 @@ export default function GPACalculator() {
                         <option
                           value=""
                           disabled
-                          className="bg-zinc-900 text-muted-foreground"
+                          className="bg-card text-muted-foreground"
                         >
                           Select Subject
                         </option>
@@ -284,7 +284,7 @@ export default function GPACalculator() {
                           <option
                             key={s.name}
                             value={s.name}
-                            className="text-foreground bg-zinc-900"
+                            className="text-foreground bg-card"
                           >
                             {s.name}
                           </option>
@@ -295,7 +295,7 @@ export default function GPACalculator() {
                           ) && (
                             <option
                               value={subject.name}
-                              className="text-foreground bg-zinc-900"
+                              className="text-foreground bg-card"
                             >
                               {subject.name}
                             </option>
@@ -327,7 +327,7 @@ export default function GPACalculator() {
                         <StyledInput
                           type="number"
                           placeholder="Cr"
-                          className="bg-zinc-900/20 border-transparent text-muted-foreground text-center cursor-not-allowed"
+                          className="bg-secondary/20 border-transparent text-muted-foreground text-center cursor-not-allowed"
                           value={subject.credits}
                           readOnly
                           min={0}
@@ -340,7 +340,7 @@ export default function GPACalculator() {
                       {subjects.length > 1 && (
                         <button
                           onClick={() => removeRow(subject.id)}
-                          className="p-3 text-muted-foreground/60 hover:text-red-400 hover:bg-red-400/10 rounded-xl transition-all sm:mt-0"
+                          className="p-3 text-muted-foreground/60 hover:text-destructive hover:bg-destructive/10 rounded-xl transition-all sm:mt-0"
                           aria-label="Remove subject"
                           title="Remove Subject"
                         >
