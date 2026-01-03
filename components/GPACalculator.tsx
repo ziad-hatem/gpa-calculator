@@ -443,7 +443,7 @@ export default function GPACalculator() {
                             key={s.id}
                             className="flex justify-between items-center text-sm border-b border-white/5 last:border-0 pb-2 last:pb-0 group"
                           >
-                            <span className="font-medium text-zinc-300 group-hover:text-white transition-colors truncate max-w-[140px]">
+                            <span className="font-medium text-zinc-300 group-hover:text-white transition-colors max-w-[140px]">
                               {s.name || `Subject ${i + 1}`}
                             </span>
                             <div className="flex items-center gap-3">
